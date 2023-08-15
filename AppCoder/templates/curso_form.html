@@ -1,0 +1,15 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Formulario de alta de cursos</h1>
+    <p>Completa los siguientes campos para dar de alta un curso.</p>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}   
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock contenidoQueCambia %}
+

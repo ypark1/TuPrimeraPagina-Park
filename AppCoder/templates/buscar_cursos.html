@@ -1,0 +1,25 @@
+{% extends 'padre.html' %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+    <h1>Buscar comisiones existentes</h1>
+    <p>Completa con el nombre del curso para ver las comisiones que hay, ej: Python.</p>
+    <form method="get" action="">
+        {{form.as_p}}   
+        <button type="submit">Buscar</button>
+    </form>
+    {% if cursos %}
+    <h2>Resultados de la búsqueda: {{camada}}</h2>
+    <ul>
+        {% for curso in cursos %}
+        <li>{{curso.nombre.upper}} - Comisión {{curso.camada}} </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No hay datos con esa descripcion.</p>
+    {% endif %}
+
+{% endblock contenidoQueCambia %}
+
